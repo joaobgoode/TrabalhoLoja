@@ -82,30 +82,4 @@ public class ProdutoDBHandler extends DBHandler<Integer, Produto> {
         }
         return null;
     }
-
-    @Override
-    public Produto remover(Integer key) {
-        if (contem(key)){
-            Produto produto = todos.get(key);
-            todos.remove(key);
-            salvar();
-            return produto;
-        }
-        return null;
-    }
-
-    @Override
-    public Produto procurar(Integer id){
-        return todos.get(id);
-    }
-
-    @Override
-    public Collection<Produto> getTodos() {
-        return todos.values();
-    }
-
-    @Override
-    public boolean contem(Integer key) {
-        return todos.containsKey(key);
-    }
 }
